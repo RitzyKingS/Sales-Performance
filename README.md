@@ -3,9 +3,9 @@
 
 Explore our **Sales Performance Dashboard** to gain valuable insights into sales, profit, and performance metrics.  
 
-**[View the Live Looker Dashboard](https://your-looker-dashboard-link.com)**  
+**[View the Live Looker Dashboard](https://lookerstudio.google.com/u/0/reporting/811eaaf5-0f29-41f6-b400-e0877de3ee7e/page/qsTpD)**  
 
-![Dashboard Overview](https://raw.githubusercontent.com/RitzyKingS/Worldwide-COVID-19-Analysis/main/images/google-site-screenshot.png)
+![Dashboard Overview](https://raw.githubusercontent.com/RitzyKingS/Sales-Performance/blob/main/Images/Dashbaord-image.png)
 
 ---
 
