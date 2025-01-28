@@ -1,85 +1,93 @@
+
 # Sales Performance Dashboard
 
-This repository showcases a **Sales Performance Dashboard** that provides insights into sales, profit, quantity, and delivery performance. The dashboard is built for interactive data exploration, enabling detailed analysis by region, category, payment mode, and more.
+Explore our **Sales Performance Dashboard** to gain valuable insights into sales, profit, and performance metrics.  
+
+**[View the Live Looker Dashboard](https://your-looker-dashboard-link.com)**  
+
+![Dashboard Overview](https://raw.githubusercontent.com/RitzyKingS/Worldwide-COVID-19-Analysis/main/images/google-site-screenshot.png)
+
+---
 
 ## Key Features
 
-### 1. **Monthly Sales and Profit Trends**
-   - **Sales Over Time:** Visualizes monthly sales trends from January 2019 to October 2020.
-   - **Profit Trends:** Displays profit performance across the same time frame for actionable insights.
+### 1. Monthly Sales and Profit Trends
+- **Sales Over Time:** Visualizes monthly sales trends from January 2019 to October 2020.
+- **Profit Trends:** Displays profit performance across the same time frame.
 
-### 2. **Payment Mode Analysis**
-   - Sales are segmented by payment modes: 
-     - **COD:** ₹667,417.75
-     - **Online:** ₹553,993.46
-     - **Cards:** ₹344,393.11
-   - Highlights the contribution of each mode to total sales.
+### 2. Payment Mode Analysis
+- **Sales by Payment Mode:** COD, Online, and Cards with respective sales figures.
 
-### 3. **Regional Performance**
-   - Sales by region:
-     - **West:** ₹522,441.05
-     - **South:** ₹252,121.08
-     - **East:** ₹450,234.67
-     - **Central:** ₹341,007.52
-   - Identifies high-performing regions for targeted business strategies.
+### 3. Regional Performance
+- **Sales by Region:** West, South, Central, and East performance comparison.
 
-### 4. **Sales by Segment**
-   - Sales breakdown by customer segments:
-     - **Home Office:** ₹303,059.07
-     - **Corporate:** ₹509,743.13
-     - **Consumer:** ₹753,002.13
+### 4. Segment and Category Analysis
+- Sales by customer segments and product categories.
 
-### 5. **Shipping Insights**
-   - **Sales by Ship Mode:**
-     - **Standard Class:** ₹912.4K
-     - **Second Class:** ₹314.5K
-     - **First Class:** ₹242.9K
-     - **Same Day:** ₹96K
-   - Visualizes the distribution of sales based on shipping preferences.
+### 5. Shipping Insights
+- Visual breakdown of sales by shipping mode.
 
-### 6. **Category and Sub-Category Performance**
-   - **Top Categories by Sales:**
-     - **Office Supplies:** ₹644K
-     - **Technology:** ₹471K
-     - **Furniture:** ₹452K
-   - **Top Sub-Categories by Sales:**
-     - **Binders:** ₹915K
-     - **Paper:** ₹825K
-     - **Furnishings:** ₹573K
-     - **Phones:** ₹519K
-     - **Storage:** ₹498K
-     - **Art:** ₹465K
+### 6. Sub-Category Performance
+- Detailed sub-category analysis for granular insights.
 
-### 7. **Summary Statistics**
-   - **Total Sales:** ₹2M
-   - **Total Quantity Sold:** 22K
-   - **Total Profit:** ₹175K
-   - **Average Delivery Time:** 4 days
+---
 
-## Screenshots
+## Code Example
 
-### Dashboard Overview
-![Sales Dashboard Overview](https://raw.githubusercontent.com/RitzyKingS/Worldwide-COVID-19-Analysis/main/images/google-site-screenshot.png)
+Here’s an example of how we used SQL to extract monthly sales data:
 
-### Key Visualizations
+```sql
+SELECT 
+    DATE_TRUNC('month', ship_date) AS sales_month,
+    SUM(sales) AS total_sales,
+    SUM(profit) AS total_profit
+FROM 
+    sales_data
+GROUP BY 
+    sales_month
+ORDER BY 
+    sales_month;
+```
 
-#### Sales by Payment Mode
-![Sales by Payment Mode](https://raw.githubusercontent.com/RitzyKingS/Worldwide-COVID-19-Analysis/main/images/looker-dashboard-1.png)
+For advanced visualizations, LookML code like the following was used:
 
-#### Sales by Region
-![Sales by Region](https://raw.githubusercontent.com/RitzyKingS/Worldwide-COVID-19-Analysis/main/images/looker-dashboard-2.png)
+```yaml
+view: sales {
+  dimension: ship_date {
+    sql: ${TABLE}.ship_date ;;
+  }
+  measure: total_sales {
+    type: sum
+    sql: ${TABLE}.sales ;;
+  }
+  measure: total_profit {
+    type: sum
+    sql: ${TABLE}.profit ;;
+  }
+}
+```
 
-#### Profit Trends
-![Monthly Profit](https://raw.githubusercontent.com/RitzyKingS/Worldwide-COVID-19-Analysis/main/images/looker-dashboard-3.png)
-
-#### Sales by Segment
-![Sales by Segment](https://raw.githubusercontent.com/RitzyKingS/Worldwide-COVID-19-Analysis/main/images/looker-dashboard-4.png)
-
-#### Category Analysis
-![Sales by Category](https://raw.githubusercontent.com/RitzyKingS/Worldwide-COVID-19-Analysis/main/images/looker-dashboard-5.png)
+---
 
 ## How to Use
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/sales-performance.git
+   git clone https://github.com/your-username/sales-performance-dashboard.git
+   ```
+2. Access the live dashboard:
+   [View the Live Looker Dashboard](https://your-looker-dashboard-link.com)
+3. Interact with visualizations to uncover key insights.
+
+---
+
+## Data Last Updated
+**January 28, 2025, 3:36:36 PM**
+
+---
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Happy Analyzing! 🚀
+```
