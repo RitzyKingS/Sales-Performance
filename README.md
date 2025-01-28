@@ -5,7 +5,7 @@ Explore our **Sales Performance Dashboard** to gain valuable insights into sales
 
 **[View the Live Looker Dashboard](https://lookerstudio.google.com/u/0/reporting/811eaaf5-0f29-41f6-b400-e0877de3ee7e/page/qsTpD)**  
 
-![Dashboard Overview](https://raw.githubusercontent.com/RitzyKingS/Sales-Performance/main/Images/Dashboard-image.png)
+![Dashboard Overview](https://github.com/RitzyKingS/Sales-Performance/raw/main/Images/Dashboard-image.png)
 
 ---
 
